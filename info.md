@@ -33,4 +33,10 @@ Object Detection Approaches:
 - Yolo - you only look once
 - Implementation unsing TensorFlow
 - SSD (https://arxiv.org/pdf/1512.02325.pdf):
-  - 
+  - Key challange: nujmber of objects is unknown
+    - proviode a fixed number of bounding boxes+classifications
+    - classify bounding boxes as "object" or "not an object" -> only considering "objects" to produce variable number of boxes+classifications
+  - Training:
+    - 
+    
+    
