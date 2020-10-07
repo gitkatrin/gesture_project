@@ -32,3 +32,5 @@ Object Detection Approaches:
 - Faster RCNN (https://arxiv.org/abs/1506.01497)
 - Yolo - you only look once
 - Implementation unsing TensorFlow
+- SSD (https://arxiv.org/pdf/1512.02325.pdf):
+  - 
