@@ -17,3 +17,18 @@ Website for datasets:
 - search for websites: 
   - https://datasetsearch.research.google.com/
   - https://www.kdnuggets.com/datasets/index.html
+
+Pre-Trained Networks in Keras:
+- VGG16
+- VGG19
+- Resnet50
+- Inception V3
+- Xception
+- MobileNet
+
+Object Detection Approaches:
+- RCNN (https://arxiv.org/abs/1311.2524)
+- Fast RCNN (https://arxiv.org/abs/1504.08083)
+- Faster RCNN (https://arxiv.org/abs/1506.01497)
+- Yolo - you only look once
+- Implementation unsing TensorFlow
