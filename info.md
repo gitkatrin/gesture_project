@@ -61,4 +61,13 @@
           - the same most probable class is the same than bpunding box i
           - bounding box overlaps substantially with bounding box i 
       4. Repeat until fixed bounding boxes
-    
+  - Paper: 
+    - The convolutional model for predicting detections is different for each feature layer
+    - Default boxes and aspect ratios:
+      - associate set of default bounding boxes with each feature map cell (one cell with set of bounding boxes) for multiple feature maps at the top of the network
+      - default boxes tile the feature map in a convolutional manner -> position of each box is fixed to corresponding cell
+      - in each feature map cell: 
+        - predict **offsets relative** to the default box shapes
+        - per-class **scores** that indicate the presence of a class instance (in each box)
+        - compute relative to original default box shape, for each box out of k at a given location the c class scores and 4 offsets
+           ->  
