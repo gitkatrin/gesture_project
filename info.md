@@ -40,6 +40,6 @@
     - Secify the output:
       - Split imput data into 3x3 cells
         - for each cell:
-          ![Alt-Text](C:/Users/katrin.gloewing/Desktop/092020-112020_Praktikum/Training_vector.png)
+          ![Alt-Text](C:/Users/katrin.gloewing/Desktop/092020-112020_Praktikum/Training_vector)
     
     
