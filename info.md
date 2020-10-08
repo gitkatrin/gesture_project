@@ -1,4 +1,4 @@
-Artificial Intelligence Frameworks:
+**Artificial Intelligence Frameworks:**
 -  Frameworks:
   - Caffee
   - Theano
@@ -7,7 +7,7 @@ Artificial Intelligence Frameworks:
 - Tensorflow: Set of APIs and data structures
 
 
-Website for datasets:
+**Website for datasets:**
 - seach for datasets:
   - https://www.kaggle.com/datasets
   - https://cocodataset.org/#explore
@@ -18,7 +18,7 @@ Website for datasets:
   - https://datasetsearch.research.google.com/
   - https://www.kdnuggets.com/datasets/index.html
 
-Pre-Trained Networks in Keras:
+**Pre-Trained Networks in Keras:**
 - VGG16
 - VGG19
 - Resnet50
@@ -26,7 +26,7 @@ Pre-Trained Networks in Keras:
 - Xception
 - MobileNet
 
-Object Detection Approaches:
+**Object Detection Approaches:**
 - RCNN (https://arxiv.org/abs/1311.2524)
 - Fast RCNN (https://arxiv.org/abs/1504.08083)
 - Faster RCNN (https://arxiv.org/abs/1506.01497)
