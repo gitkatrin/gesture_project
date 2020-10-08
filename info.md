@@ -61,9 +61,9 @@
           - the same most probable class is the same than bpunding box i
           - bounding box overlaps substantially with bounding box i 
       4. Repeat until fixed bounding boxes
-  - Paper: 
+  - **Paper:** 
     - The convolutional model for predicting detections is different for each feature layer
-    - Default boxes and aspect ratios:
+    - Model: Default boxes and aspect ratios:
       - associate set of default bounding boxes with each feature map cell (one cell with set of bounding boxes) for multiple feature maps at the top of the network
       - default boxes tile the feature map in a convolutional manner -> position of each box is fixed to corresponding cell
       - in each feature map cell: 
@@ -74,3 +74,10 @@
           -> (c + 4)k filters, applied around each location in the feature map -> (c + 4)kmn outputs (for m x n feature map)
       - like anchor boxes (Faster R-CNN) but apply them on several feature maps of different resolutions
       - allowing different default box shapes in severat feature maps -> discretize the space of possible output box shapes
+    - Training:
+      - ground truth information needs to be assigned to specific outputs in the fixed set of detector outputs
+      - assignment determined -> loss function and back propagation are applied end-to-end
+      - choosing the set of default boxes and scales for detection
+      - scales for detection hard negative mining and data augmentation strategies
+      - matching strategy:
+        - 
