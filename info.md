@@ -33,10 +33,13 @@
 - Yolo - you only look once
 - Implementation unsing TensorFlow
 - SSD (https://arxiv.org/pdf/1512.02325.pdf):
-  - Key challange: nujmber of objects is unknown
-    - proviode a fixed number of bounding boxes+classifications
+  - Key challange: nujmber of objects is unknown (How many bounding boxes? How many classifictions?)
+    - proviode a fixed number of bounding boxes+classifications(maximum)
     - classify bounding boxes as "object" or "not an object" -> only considering "objects" to produce variable number of boxes+classifications
   - Training:
-    - 
+    - Secify the output:
+      - Split imput data into 3x3 cells
+        - for each cell:
+          ![Alt-Text](C:\Users\katrin.gloewing\Desktop\092020-112020_Praktikum\Training_vector.png)
     
     
