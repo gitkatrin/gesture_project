@@ -33,13 +33,31 @@
 - Yolo - you only look once
 - Implementation unsing TensorFlow
 - SSD (https://arxiv.org/pdf/1512.02325.pdf):
-  - Key challange: nujmber of objects is unknown (How many bounding boxes? How many classifictions?)
+  - Key challange: number of objects is unknown (How many bounding boxes? How many classifictions?)
     - proviode a fixed number of bounding boxes+classifications(maximum)
     - classify bounding boxes as "object" or "not an object" -> only considering "objects" to produce variable number of boxes+classifications
   - Training:
+    -True classifications and bounding boxes are known
     - Secify the output:
       - Split imput data into 3x3 cells
         - for each cell:
-          <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Training_vector.PNG" width="250">
-    
+         
+         <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Training_vector.PNG" width="250">
+        - Cell that contains the center point of the object is associated to the object:
+          -> identify cell with center point of bounding box
+          -> conpare bounding box with different anchor boxes in this cell
+          -> associate object to ancher box with most sililar shape (higherst IoU)
+        - Multiple anchor boxes in each cell (anchor box: initial guess for a bounding box with fixed size)
+          -> output one y for every anchor box
+  - Testing:
+    - basic probelm: obtain too many bounding boxes; trainined network would output a vector y for every anchor box
+    - remove all bounding boxes which are p < 0,5 (p: Probability that its an object)
+      - normally left with a few bounding boxes for each object (many anchor boxes overlap with object because of the 19x19 grid)
+    - Non-maximum suppression:
+      1. Remove all anchor boxes: p < 0,5
+      2. Find anchor box with the largest probability of being an object and store that to set of object detections (bounding box i)
+      3. Remove all anchor boxes:
+        - the same most probable class is the same than bpunding box i
+        - bounding box overlaps substantially with bounding box i 
+      4. Repeat until fixed bounding boxes
     
