@@ -37,12 +37,13 @@
     - proviode a fixed number of bounding boxes+classifications(maximum)
     - classify bounding boxes as "object" or "not an object" -> only considering "objects" to produce variable number of boxes+classifications
   - Training:
-    -True classifications and bounding boxes are known
+    - True classifications and bounding boxes are known
     - Secify the output:
       - Split imput data into 3x3 cells
         - for each cell:
          
-         <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Training_vector.PNG" width="250">
+            <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Training_vector.PNG" width="250">
+         
         - Cell that contains the center point of the object is associated to the object:
           -> identify cell with center point of bounding box
           -> conpare bounding box with different anchor boxes in this cell
