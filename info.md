@@ -71,6 +71,6 @@
         - per-class **scores** that indicate the presence of a class instance (in each box)
       - compute relative to original default box shape, for each box out of k at a given location the c class scores and 4 offsets
       
-            -> (c + 4)k filters, applied around each location in the feature map -> (c + 4)kmn outputs (for m x n feature map)
+          -> (c + 4)k filters, applied around each location in the feature map -> (c + 4)kmn outputs (for m x n feature map)
       - like anchor boxes (Faster R-CNN) but apply them on several feature maps of different resolutions
       - allowing different default box shapes in severat feature maps -> discretize the space of possible output box shapes
