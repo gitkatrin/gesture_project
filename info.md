@@ -58,7 +58,7 @@
       1. Remove all anchor boxes: p < 0,5
       2. Find anchor box with the largest probability of being an object and store that to set of object detections (bounding box i)
       3. Remove all anchor boxes:
-        - the same most probable class is the same than bpunding box i
-        - bounding box overlaps substantially with bounding box i 
+          - the same most probable class is the same than bpunding box i
+          - bounding box overlaps substantially with bounding box i 
       4. Repeat until fixed bounding boxes
     
