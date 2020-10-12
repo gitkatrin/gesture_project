@@ -1,3 +1,3 @@
-1) relationship inside one channel <math>D<sub>k</sub>*D<sub>k</sub> \cdot M<math>
-
-$A = r^{2}*\pi$
+1) relationship inside one channel <math>D<sub>k</sub>* D<sub>k</sub>* M<math>
+  - first filter on first channel, second filter on second channel
+  
