@@ -18,13 +18,13 @@
    
 - 7 Layer, each layer has a different size of feature map (e.g. Layer one has a feature map size of 38x38)
 
-1.) Detection of 4 or 6 default boxes for each cell in every feature map -> summarized: 8732 Detections per Class
+1) Detection of 4 or 6 default boxes for each cell in every feature map -> summarized: 8732 Detections per Class
 
-2.) Hard Negative Mining and Non-Maximum Suppression
-- **while training**: give model the information of the ground trouth and do Hard Negative Mining
+2) Hard Negative Mining and Non-Maximum Suppression
+    - **while training**: give model the information of the ground trouth and do Hard Negative Mining
 
-   <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Hard%20Negative%20Mining.png" width="500">
+        <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Hard%20Negative%20Mining.png" width="500">
 
-- **at inference time**: Non-Maximum Suppression (NMS)
+    - **at inference time**: Non-Maximum Suppression (NMS)
 
-   <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Non-Maximum%20Suppression%20.jpeg" width="200">
+        <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/Non-Maximum%20Suppression%20.jpeg" width="200">
