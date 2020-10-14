@@ -10,5 +10,5 @@
   
 3) b) auf Abbildung: <math> D<sub>K</sub><sup>2</sup> * D<sub>F</sub><sup>2</sup> * M <math>     c) auf Abbildung: <math> M * D<sub>K</sub><sup>2</sup> * N<math>
 
-        <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/mobile_net.png" width="220">
+      <img src="https://github.com/gitkatrin/gesture_project/blob/master/images/mobile_net.png" width="220">
 
