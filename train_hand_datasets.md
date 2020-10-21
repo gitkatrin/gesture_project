@@ -40,6 +40,11 @@ hand_detection_egohand/
 |   |   |-- README.md
 |   |   `-- setup.py
 |   `-- ...
+```
+
+```
+hand_detection_egohand/
+|-- ...
 |-- scripts # helpful scripts for data prepatration (in this repository: https://github.com/gitkatrin/gesture_project/tree/master/scripts)
 |-- workspace
 |   `-- training_demo
