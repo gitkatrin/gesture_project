@@ -2,31 +2,6 @@
 
 
 # File structure:
-
-```
-project_name/
-├─ models/
-|  ├─ community/
-|  ├─ official/
-|  ├─ orbit/
-|  ├─ research/
-├─ scripts/
-├─ workspace/
-|  └─ training_demo/
-|     ├─ annotations/
-|     ├─ exported-models/
-|     ├─ images/
-|       ├─ test/
-|       └─ train/
-|     ├─ models/
-      ├─ pre-trained-models/
-      │  └─ ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/
-      │     ├─ checkpoint/
-      │     ├─ saved_model/
-      │     └─ pipeline.config
-```
-
-
 ```
 hand_detection_egohand/
 |-- models # from tensorflow https://github.com/tensorflow/models
@@ -97,3 +72,4 @@ hand_detection_egohand/
 |       `-- TF-webcam-opencv.py
 `-- Training-a-Custom-TensorFlow-2.X-Object-Detector-master.zip
 ```
+
