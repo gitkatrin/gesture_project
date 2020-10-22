@@ -109,7 +109,7 @@ Use the following command for detecting objects on an image:
 python3 TF-image-od.py
 ```
 There are also some other scripts for detection with different input:
-- for detecting and coundting objects on an ***image**: ```python3 TF-image-object-counting.py```
+- for detecting and coundting objects on an **image**: ```python3 TF-image-object-counting.py```
 - for detecting objects in a **video**: ```python3 TF-video-od.py```
 - for detecting and counting objects in a **video**: ```python3 TF-video-object-counting.py```
 - for detection objects live on **webcam**: ```python3 TF-webcam-opencv.py```
