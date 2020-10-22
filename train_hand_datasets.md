@@ -77,4 +77,12 @@ hand_detection_egohand/
 |       `-- TF-webcam-opencv.py
 `-- Training-a-Custom-TensorFlow-2.X-Object-Detector-master.zip
 ```
-
+# Exporting the Inference Graph
+in the Venv, in file:
+```
+cd hand_detection_egohands/workspace/training_demo
+```
+Use the following command:
+```
+python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/ssd_mobilenet_v2.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
+```
