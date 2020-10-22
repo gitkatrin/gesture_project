@@ -97,5 +97,31 @@ cd hand_detection_egohands/workspace/training_demo
 Use the following command:
 ```
 python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
+```
 
+# Testing
+in the Venv, in file:
+```
+cd hand_detection_egohands/workspace/training_demo
+```
+Use the following command for detecting objects on an image:
+```
+python3 TF-image-od.py
+```
+There are also some other scripts for detection with different input:
+- for detecting and coundting objects on an ***image**: ```python3 TF-image-object-counting.py```
+- for detecting objects in a **video**: ```python3 TF-video-od.py```
+- for detecting and counting objects in a **video**: ```python3 TF-video-object-counting.py```
+- for detection objects live on **webcam**: ```python3 TF-webcam-opencv.py```
+
+You can also run this script with different arguments:
+```
+python3 TF-image-od.py [-h] [--model MODEL] [--labels LABELS] [--image IMAGE] [--threshold THRESHOLD]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model MODEL         Folder that the Saved Model is Located In
+  --labels LABELS       Where the Labelmap is Located
+  --image IMAGE         Name of the single image to perform detection on
+  --threshold THRESHOLD Minimum confidence threshold for displaying detected objects
 ```
