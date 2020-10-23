@@ -3,7 +3,7 @@
 
 # File structure:
 ```
-hand_detection_egohand/
+detection_folder/
 |-- models # from tensorflow https://github.com/tensorflow/models
 |   |-- ...
 |   |-- research
@@ -43,7 +43,7 @@ hand_detection_egohand/
 ```
 
 ```
-hand_detection_egohand/
+detection_folder/
 |-- ...
 |-- scripts # helpful scripts for data prepatration (in this repository: https://github.com/gitkatrin/gesture_project/tree/master/scripts)
 |-- workspace
@@ -77,6 +77,38 @@ hand_detection_egohand/
 |       `-- TF-webcam-opencv.py
 `-- Training-a-Custom-TensorFlow-2.X-Object-Detector-master.zip
 ```
+
+# Software:
+- Tensorflow, Tensorflow-gpu
+- Python 3
+- Tensorflow models (clone this repository: https://github.com/tensorflow/models)
+- Python environement (```python3 -m venv --system-site-packages ./venv```)
+  - ```pip3 install protobuf```
+
+
+# Preparing the data
+
+1. create your [label map](https://github.com/gitkatrin/gesture_project/blob/master/scripts/label_map.pbtxt) here ```direction_folder/workspace/training_demo/annotations```
+
+
+## Generate .tfrecord-file from .csv-file
+
+1. activate the Python environement with ```source ./venv/bin/activate``` (in terminal)
+2. go to the research folder in models with ```cd models/reseach```
+3. compile the protos with 
+  ```
+  protoc object_detection/protos/*.protos --python_out=.
+  export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+  sudo python3 setup.py install
+  ```
+4. open the [csv_to_tfrecord.py](https://github.com/gitkatrin/gesture_project/blob/master/scripts/csv_to_tfrecord.py) file
+5. change the path directories in the main function for:
+  - your image path
+  - your csv path
+  - your output path
+  - your label map path
+6. go back into the terminal and go to path ```cd workspace/training_demo``` 
+7. run the script with ```python3 csv_to_tfrecord.py```
 
 # Training
 ## Exporting the Inference Graph
