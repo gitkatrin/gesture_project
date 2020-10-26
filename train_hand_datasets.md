@@ -2,21 +2,23 @@
 
 
 # File structure:
+
+## Model folder from Tensorflow
 ```
 detection_folder/
-|-- models # from tensorflow https://github.com/tensorflow/models
+|-- models                  # from tensorflow https://github.com/tensorflow/models
 |   |-- ...
 |   |-- research
 |   |   |-- ...
 |   |   |-- object_detection
 |   |   |   |-- ...
-|   |   |   |-- configs   # configurations for all TF2 models
+|   |   |   |-- configs     # configurations for all TF2 models
 |   |   |   |-- ...
-|   |   |   |-- models  # all usable models
-|   |   |   |-- packages  # setup files for tf1 and tf2
+|   |   |   |-- models      # all usable models
+|   |   |   |-- packages    # setup files for tf1 and tf2
 |   |   |   |-- predictors  # all usable predictors
 |   |   |   |-- ...
-|   |   |   |-- samples # some usable configuration samples
+|   |   |   |-- samples     # some usable configuration samples
 |   |   |   |-- ...
 |   |   |-- ...
 |   |   |-- model_main_tf2.py
@@ -25,32 +27,29 @@ detection_folder/
 |   `-- ...
 ```
 
+## Workspace and Scripts folders
 ```
 detection_folder/
 |-- ...
-|-- scripts # helpful scripts for data prepatration (in this repository: https://github.com/gitkatrin/gesture_project/tree/master/scripts)
+|-- scripts                   # helpful scripts for data preparation (in this repository: https://github.com/gitkatrin/gesture_project/tree/master/scripts)
 |-- workspace
 |   `-- training_demo
 |       |-- annotations
 |       |   |-- label_map.pbtxt
 |       |   |-- test.record
 |       |   `-- train.record
-|       |-- checkpoint ??????????????????????????????????????????
-|       |   |-- checkpoint
-|       |   |-- ckpt-0.data-00000-of-00001
-|       |   `-- ckpt-0.index
-|       |-- exported-models # this is empty at the beginning of training, your new trained model will be here
+|       |-- exported-models   # this is empty at the beginning of training, your new trained model will be here
 |       |-- images
 |       |   |-- test
 |       |   |-- train
-|       |-- models # model which you use for training (download it here: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+|       |-- models            # model which you use for training
 |       |   `-- my_ssd_mobilenet_v2_fpnlite
-|       |       `-- pipeline.config # copy from pre-trained model
-|       |-- pre-trained-models      # pre-trained model which you use for training (download it here: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+|       |       `-- my_ssd_mobilenet_v2.config   # copy .config from pre-trained model
+|       |-- pre-trained-models                   # pre-trained model which you use for training (download it here: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
 |       |   `-- ssd_mobilenet_v1_fpn_640x640_coco17_tpu-8
 |       |       |-- checkpoint
 |       |       |-- saved_model
-|       |       `-- pipeline.config # configuration file
+|       |       `-- pipeline.config              # configuration file
 |       |-- exporter_main_v2.py
 |       |-- model_main_tf2.py
 |       |-- TF-image-object-counting.py
@@ -61,12 +60,16 @@ detection_folder/
 `-- Training-a-Custom-TensorFlow-2.X-Object-Detector-master.zip
 ```
 
+[comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
+
 # Software:
 - Tensorflow, Tensorflow-gpu
 - Python 3
-- Tensorflow models (clone this repository: https://github.com/tensorflow/models)
+- [Tensorflow models](https://github.com/tensorflow/models)
 - Python environement (```python3 -m venv --system-site-packages ./venv```)
   - ```pip3 install protobuf```
+- [scripts for data preparation](https://github.com/gitkatrin/gesture_project/tree/master/scripts)
+- [Pre-trained Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
@@ -99,13 +102,9 @@ detection_folder/
 # Training
 
 
-## Training the Model
+## Train the Model
 
-in the **virtual environment**, in file:
-```
-cd hand_detection_egohands/workspace/training_demo
-```
-Use the following command:
+in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
 python3 model_main_tf2.py --model_dir=models/my_ssd_mobilenet_v2_fpnlite --pipeline_config_path=models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config
 ```
@@ -120,14 +119,14 @@ in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace
 ```
 tensorboard --logdir=models/my_ssd_mobilenet_v2_fpnlite
 ```
-
+It should open an URL-Link to the TensorBoard Server. Open this link in your web browser and you can continuously monitor training.
 
 
 ## Exporting the Inference Graph
 
 in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
-python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/pipeline.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
+python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
 ```
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
