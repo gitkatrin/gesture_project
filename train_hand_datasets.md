@@ -68,8 +68,9 @@ detection_folder/
 - Python environement (```python3 -m venv --system-site-packages ./venv```)
   - ```pip3 install protobuf```
 
+[comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# Preparing the data
+# Preparing the data 
 
 1. create your [label map](https://github.com/gitkatrin/gesture_project/blob/master/scripts/label_map.pbtxt) here ```direction_folder/workspace/training_demo/annotations```
 
@@ -93,17 +94,37 @@ detection_folder/
 6. go back into the terminal and go to path ```cd workspace/training_demo``` 
 7. run the script with ```python3 csv_to_tfrecord.py```
 
+[comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
+
 # Training
-## Exporting the Inference Graph
+
+
+## Training the Model
+
 in the Venv, in file:
 ```
 cd hand_detection_egohands/workspace/training_demo
 ```
 Use the following command:
 ```
-python3 model_main_tf2.py --model_dir=models\my_ssd_mobilenet_v2_fpnlite --pipeline_config_path=models\my_ssd_mobilenet_v2_fpnlite\my_ssd_mobilenet_v2.config
+python3 model_main_tf2.py --model_dir=models/my_ssd_mobilenet_v2_fpnlite --pipeline_config_path=models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config
 ```
 At the end the **loss should be between 0.150 and 0.200** to prevents unnderfitting and overfitting.
+
+
+## Monotoring realtime training (optional)
+
+It is possible to show the traning process with TensorBoard. This is optional.
+
+in the Venv, in file:
+```
+cd hand_detection_egohands/workspace/training_demo
+```
+Use the following command:
+```
+python3 model_main_tf2.py --model_dir=models/my_ssd_mobilenet_v2_fpnlite --pipeline_config_path=models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config
+```
+
 
 
 ## Exporting the Inference Graph
@@ -116,6 +137,8 @@ Use the following command:
 python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/pipeline.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
 ```
 
+[comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
+
 # Evaluation
 in the Venv, in file:
 ```
@@ -125,6 +148,8 @@ Use the following command:
 ```
 python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
 ```
+
+[comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
 # Testing
 in the Venv, in file:
