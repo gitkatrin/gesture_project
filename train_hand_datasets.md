@@ -1,18 +1,22 @@
 # How to train hand datasets with the SSD with Mobilenet v2
 
-- [1. File structure](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#file-structure)
-  - [1.1 Model folder from Tensorflow]()
-  - [1.2 Workspace and Scripts folder]()
-- [2. Preparing settings]()
+- [1. File Structure]()
+  - [1.1 Model Folder from Tensorflow]()
+  - [1.2 Workspace and Scripts Folder]()
+- [2. Preparing Settings]()
   - [2.1 Software]()
-  - [2.2 Preparing the data]()
-    - [2.2.1 Generate .tfrecord file from .csv file]()
-- [Training]()
-  - [Train the Model](l)
+  - [2.2 Preparing Files]()
+    - [2.2.1 Generate .tfrecord-File from .csv-File]()
+- [3. Training]()
+  - [3.1 Train the Model]()
+  - [3.2 Monitoring realtime Training (optional)]()
+  - [3.3 Exporting the Interference Graph]()
+- [4. Evaluation]()
+- [5. Testing]()
   
-# 1. File structure:
+# 1. File Structure:
 
-## 1.1 Model folder from Tensorflow
+## 1.1 Model Folder from Tensorflow
 ```
 detection_folder/
 |-- models                  # from tensorflow https://github.com/tensorflow/models
@@ -36,7 +40,7 @@ detection_folder/
 |   `-- ...
 ```
 
-## 1.2 Workspace and Scripts folders
+## 1.2 Workspace and Scripts Folders
 ```
 detection_folder/
 |-- ...
@@ -71,7 +75,7 @@ detection_folder/
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# 2. Preparing settings
+# 2. Preparing Settings
 
 ## 2.1 Software
 - Tensorflow, Tensorflow-gpu
@@ -83,12 +87,12 @@ detection_folder/
 - [Pre-trained Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
 
 
-## 2.2 Preparing files
+## 2.2 Preparing Files
 
 1. create your [label map](https://github.com/gitkatrin/gesture_project/blob/master/scripts/label_map.pbtxt) here ```direction_folder/workspace/training_demo/annotations```
 
 
-### 2.2.1 Generate .tfrecord-file from .csv-file
+### 2.2.1 Generate .tfrecord-File from .csv-File
 
 1. activate the Python environement with ```source ./venv/bin/activate``` (in terminal)
 2. go to the research folder in models with ```cd models/reseach```
@@ -120,7 +124,7 @@ python3 model_main_tf2.py --model_dir=models/my_ssd_mobilenet_v2_fpnlite --pipel
 At the end the **loss should be between 0.150 and 0.200** to prevents unnderfitting and overfitting.
 
 
-## 3.2 Monotoring realtime training (optional)
+## 3.2 Monotoring realtime Training (optional)
 
 It is possible to show the traning process with TensorBoard. This is optional.
 
@@ -140,7 +144,7 @@ python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path .
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# Evaluation
+# 4. Evaluation
 
 in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
@@ -149,7 +153,7 @@ python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnl
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# Testing
+# 5. Testing
 
 in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
