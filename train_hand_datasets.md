@@ -1,20 +1,20 @@
 # How to train hand datasets with the SSD with Mobilenet v2
 
-- [1. File Structure]()
-  - [1.1 Model Folder from Tensorflow]()
-  - [1.2 Workspace and Scripts Folder]()
-- [2. Preparing Settings]()
-  - [2.1 Software]()
-  - [2.2 Preparing Files]()
-    - [2.2.1 Generate .tfrecord-File from .csv-File]()
-- [3. Training]()
-  - [3.1 Train the Model]()
-  - [3.2 Monitoring realtime Training (optional)]()
-  - [3.3 Exporting the Interference Graph]()
-- [4. Evaluation]()
-- [5. Testing]()
+- [1. File Structure](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#1-file-structure)
+  - [1.1 Model Folder from Tensorflow](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#11-model-folder-from-tensorflow)
+  - [1.2 Workspace and Scripts Folder](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#12-workspace-and-scripts-folders)
+- [2. Preparing Settings](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#2-preparing-settings)
+  - [2.1 Software](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#21-software)
+  - [2.2 Preparing Files](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#22-preparing-files)
+    - [2.2.1 Generate .tfrecord-File from .csv-File](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#221-generate-tfrecord-file-from-csv-file)
+- [3. Training](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#3-training)
+  - [3.1 Train the Model](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#31-train-the-model)
+  - [3.2 Monitoring realtime Training (optional)](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#32-monotoring-realtime-training-optional)
+  - [3.3 Exporting the Interference Graph](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#33-exporting-the-inference-graph)
+- [4. Evaluation](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#4-evaluation)
+- [5. Testing](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#5-testing)
   
-# 1. File Structure:
+# 1. File Structure
 
 ## 1.1 Model Folder from Tensorflow
 ```
