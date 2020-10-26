@@ -98,7 +98,7 @@ detection_folder/
 2. go to the research folder in models with ```cd models/reseach```
 3. compile the protos with 
   ```
-  protoc object_detection/protos/*.protos --python_out=.
+  protoc object_detection/protos/*.proto --python_out=.
   export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
   sudo python3 setup.py install
   ```
