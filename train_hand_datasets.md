@@ -1,14 +1,14 @@
 # How to train hand datasets with the SSD with Mobilenet v2
 
-- [File structure](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#file-structure)
-  - [Model folder from Tensorflow](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#model-folder-from-tensorflow)
-  - [Workspace and Scripts folder](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#workspace-and-scripts-folders)
-- [Preparing settings](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#preparing-settings)
-  - [Software](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#software)
-  - [Preparing the data](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#preparing-the-data)
-  - [Generate .tfrecord file from .csv file](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#generate-tfrecord-file-from-csv-file)
-- [Training](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#training)
-  - [Train the Model](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#train-the-model)
+- [1. File structure](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#file-structure)
+  - [1.1 Model folder from Tensorflow]()
+  - [1.2 Workspace and Scripts folder]()
+- [2. Preparing settings]()
+  - [2.1 Software]()
+  - [2.2 Preparing the data]()
+    - [2.2.1 Generate .tfrecord file from .csv file]()
+- [Training]()
+  - [Train the Model](l)
   
 # 1. File structure:
 
@@ -73,7 +73,7 @@ detection_folder/
 
 # 2. Preparing settings
 
-## 2.2 Software
+## 2.1 Software
 - Tensorflow, Tensorflow-gpu
 - Python 3
 - [Tensorflow models](https://github.com/tensorflow/models)
@@ -82,14 +82,13 @@ detection_folder/
 - [scripts for data preparation](https://github.com/gitkatrin/gesture_project/tree/master/scripts)
 - [Pre-trained Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
 
-[comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# 2.3 Preparing the data 
+## 2.2 Preparing files
 
 1. create your [label map](https://github.com/gitkatrin/gesture_project/blob/master/scripts/label_map.pbtxt) here ```direction_folder/workspace/training_demo/annotations```
 
 
-## Generate .tfrecord-file from .csv-file
+### 2.2.1 Generate .tfrecord-file from .csv-file
 
 1. activate the Python environement with ```source ./venv/bin/activate``` (in terminal)
 2. go to the research folder in models with ```cd models/reseach```
@@ -110,10 +109,9 @@ detection_folder/
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# Training
+# 3. Training
 
-
-## Train the Model
+## 3.1 Train the Model
 
 in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
@@ -122,7 +120,7 @@ python3 model_main_tf2.py --model_dir=models/my_ssd_mobilenet_v2_fpnlite --pipel
 At the end the **loss should be between 0.150 and 0.200** to prevents unnderfitting and overfitting.
 
 
-## Monotoring realtime training (optional)
+## 3.2 Monotoring realtime training (optional)
 
 It is possible to show the traning process with TensorBoard. This is optional.
 
@@ -133,7 +131,7 @@ tensorboard --logdir=models/my_ssd_mobilenet_v2_fpnlite
 It should open an URL-Link to the TensorBoard Server. Open this link in your web browser and you can continuously monitor training.
 
 
-## Exporting the Inference Graph
+## 3.3 Exporting the Inference Graph
 
 in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
