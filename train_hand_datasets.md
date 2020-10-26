@@ -1,4 +1,4 @@
-# How to train hand datasets with the SSD with Mobilenet v1
+# How to train hand datasets with the SSD with Mobilenet v2
 
 
 # File structure:
@@ -101,7 +101,7 @@ detection_folder/
 
 ## Training the Model
 
-in the Venv, in file:
+in the **virtual environment**, in file:
 ```
 cd hand_detection_egohands/workspace/training_demo
 ```
@@ -116,23 +116,16 @@ At the end the **loss should be between 0.150 and 0.200** to prevents unnderfitt
 
 It is possible to show the traning process with TensorBoard. This is optional.
 
-in the Venv, in file:
+in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
-cd hand_detection_egohands/workspace/training_demo
-```
-Use the following command:
-```
-python3 model_main_tf2.py --model_dir=models/my_ssd_mobilenet_v2_fpnlite --pipeline_config_path=models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config
+tensorboard --logdir=models/my_ssd_mobilenet_v2_fpnlite
 ```
 
 
 
 ## Exporting the Inference Graph
-in the Venv, in file:
-```
-cd hand_detection_egohands/workspace/training_demo
-```
-Use the following command:
+
+in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
 python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/pipeline.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
 ```
@@ -140,11 +133,8 @@ python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path .
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
 # Evaluation
-in the Venv, in file:
-```
-cd hand_detection_egohands/workspace/training_demo
-```
-Use the following command:
+
+in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
 python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
 ```
@@ -152,11 +142,8 @@ python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnl
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
 # Testing
-in the Venv, in file:
-```
-cd hand_detection_egohands/workspace/training_demo
-```
-Use the following command for detecting objects on an image:
+
+in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
 python3 TF-image-od.py
 ```
