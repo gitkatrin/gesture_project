@@ -8,24 +8,8 @@ detection_folder/
 |   |-- ...
 |   |-- research
 |   |   |-- ...
-|   |   |-- annotations   ???????????????
-|   |   |   |-- label_map.pbtxt
-|   |   |   |-- test.record
-|   |   |   `-- train.record
-|   |   |-- images ?????????????????????????
-|   |   |-- models  ??????????????????????
-|   |   |   `-- my_ssd_mobilenet_v2_fpnlite
-|   |   |       `-- pipeline.config
 |   |   |-- object_detection
 |   |   |   |-- ...
-|   |   |   |-- annotations ????????????????????????????????????????????????????????????
-|   |   |   |   |-- label_map.pbtxt
-|   |   |   |   |-- test.record
-|   |   |   |   `-- train.record
-|   |   |   |-- checkpoint ??????????????????????????????????????????????????????
-|   |   |   |   |-- checkpoint
-|   |   |   |   |-- ckpt-0.data-00000-of-00001
-|   |   |   |   `-- ckpt-0.index
 |   |   |   |-- configs   # configurations for all TF2 models
 |   |   |   |-- ...
 |   |   |   |-- models  # all usable models
@@ -34,7 +18,6 @@ detection_folder/
 |   |   |   |-- ...
 |   |   |   |-- samples # some usable configuration samples
 |   |   |   |-- ...
-|   |   |-- pre-trained-models ???????????????????????????????????
 |   |   |-- ...
 |   |   |-- model_main_tf2.py
 |   |   |-- README.md
@@ -118,7 +101,19 @@ cd hand_detection_egohands/workspace/training_demo
 ```
 Use the following command:
 ```
-python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/ssd_mobilenet_v2.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
+python3 model_main_tf2.py --model_dir=models\my_ssd_mobilenet_v2_fpnlite --pipeline_config_path=models\my_ssd_mobilenet_v2_fpnlite\my_ssd_mobilenet_v2.config
+```
+At the end the **loss should be between 0.150 and 0.200** to prevents unnderfitting and overfitting.
+
+
+## Exporting the Inference Graph
+in the Venv, in file:
+```
+cd hand_detection_egohands/workspace/training_demo
+```
+Use the following command:
+```
+python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/pipeline.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
 ```
 
 # Evaluation
