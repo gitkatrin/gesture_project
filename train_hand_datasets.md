@@ -148,7 +148,7 @@ python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path .
 
 in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
-python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
+python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
 ```
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
