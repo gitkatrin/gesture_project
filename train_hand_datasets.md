@@ -112,6 +112,10 @@ detection_folder/
 6. go back into the terminal and go to path ```cd workspace/training_demo``` 
 7. run the script with ```python3 csv_to_tfrecord.py```
 
+### 2.2.2 Change Configuration File
+
+1. copy the configuration file ```detection_folder/workspace/training_demo/pre-trained-model/ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/pipeline.config``` to ```detection_folder/workspace/training_demo/models/my_ssd_mobilenet_v2_fpnlite``` folder
+
 ### 2.2.2 Change Configuragtion File for Training
  - change batch_size to 4
  
