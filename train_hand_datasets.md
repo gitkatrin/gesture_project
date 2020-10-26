@@ -111,6 +111,13 @@ detection_folder/
 6. go back into the terminal and go to path ```cd workspace/training_demo``` 
 7. run the script with ```python3 csv_to_tfrecord.py```
 
+### 2.2.2 Change Configuragtion File for Training
+ - change batch_size to 4
+ 
+ 
+### 2.2.3 Change Configuragtion File for Evaluation
+ - change batch_size to 1
+
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
 # 3. Training
