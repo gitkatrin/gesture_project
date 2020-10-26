@@ -95,6 +95,7 @@ detection_folder/
 ### 2.2.1 Generate .tfrecord-File from .csv-File
 
 1. activate the Python environement with ```source ./venv/bin/activate``` (in terminal)
+   (Attention: you can also do it without the Python environement)
 2. go to the research folder in models with ```cd models/reseach```
 3. compile the protos with 
   ```
