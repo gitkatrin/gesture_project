@@ -1,10 +1,18 @@
 # How to train hand datasets with the SSD with Mobilenet v2
 
-\tableofcontents
+- [File structure](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#file-structure)
+  - [Model folder from Tensorflow](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#model-folder-from-tensorflow)
+  - [Workspace and Scripts folder](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#workspace-and-scripts-folders)
+- [Preparing settings](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#preparing-settings)
+  - [Software](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#software)
+  - [Preparing the data](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#preparing-the-data)
+  - [Generate .tfrecord file from .csv file](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#generate-tfrecord-file-from-csv-file)
+- [Training](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#training)
+  - [Train the Model](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#train-the-model)
+  
+# 1. File structure:
 
-# File structure:
-
-## Model folder from Tensorflow
+## 1.1 Model folder from Tensorflow
 ```
 detection_folder/
 |-- models                  # from tensorflow https://github.com/tensorflow/models
@@ -28,7 +36,7 @@ detection_folder/
 |   `-- ...
 ```
 
-## Workspace and Scripts folders
+## 1.2 Workspace and Scripts folders
 ```
 detection_folder/
 |-- ...
@@ -63,7 +71,9 @@ detection_folder/
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# Software:
+# 2. Preparing settings
+
+## 2.2 Software
 - Tensorflow, Tensorflow-gpu
 - Python 3
 - [Tensorflow models](https://github.com/tensorflow/models)
@@ -74,7 +84,7 @@ detection_folder/
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
-# Preparing the data 
+# 2.3 Preparing the data 
 
 1. create your [label map](https://github.com/gitkatrin/gesture_project/blob/master/scripts/label_map.pbtxt) here ```direction_folder/workspace/training_demo/annotations```
 
