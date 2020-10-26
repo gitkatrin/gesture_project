@@ -115,6 +115,18 @@ detection_folder/
 ### 2.2.2 Change Configuration File
 
 1. copy the configuration file ```detection_folder/workspace/training_demo/pre-trained-model/ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/pipeline.config``` to ```detection_folder/workspace/training_demo/models/my_ssd_mobilenet_v2_fpnlite``` folder
+2. open the configuration file in ```detection_folder/workspace/training_demo/models/my_ssd_mobilenet_v2_fpnlite``` folder
+3. do the following changes:
+    - Line 3:   change ```num_classes``` to this value of different objects you want to detect
+    - Line 135: change ```batch_size``` to 4
+    - Line 165: change ```fine_tune_checkpoint``` to your path (```pre-trained-models/ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/checkpoint/ckpt-0```)
+    - Line 171: change ```fine_tune_checkpoint_type``` to ```detection```
+    - Line 175: change ```label_map_path``` to your path (```annotation/label_map.pbtxt```)
+    - Line 177: change ```input_path``` to your path (```annotation/train.record```)
+    - Line 185: change ```label_map_path``` to your path (```annotation/label_map.pbtxt```)
+    - Line 189: change ```input_path``` to your path (```annotation/test.record```)
+
+    (keep in mind: if you choose a different model, than the line numbers will be different)
 
 ### 2.2.2 Change Configuragtion File for Training
  - change batch_size to 4
