@@ -96,11 +96,11 @@ detection_folder/
 
 1. go to the research folder in models with ```cd models/reseach``` without virtual environment
 2. compile the protos with 
-  ```
-  protoc object_detection/protos/*.proto --python_out=.
-  export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
-  sudo python3 setup.py install
-  ```
+    ```
+    protoc object_detection/protos/*.proto --python_out=.
+    export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+    sudo python3 setup.py install
+    ```
 3. open the [csv_to_tfrecord.py](https://github.com/gitkatrin/gesture_project/blob/master/scripts/csv_to_tfrecord.py) file
 4. change the path directories in the main function for:
   - your image path
