@@ -4,6 +4,7 @@
   - [1.1 Model Folder from Tensorflow](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#11-model-folder-from-tensorflow)
   - [1.2 Workspace and Scripts Folder](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#12-workspace-and-scripts-folders)
 - [2. Preparing Settings](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#2-preparing-settings)
+  - [Create Label Map File]()
   - [2.1 Software](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#21-software)
   - [2.2 Preparing Files](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#22-preparing-files)
     - [2.2.1 Generate .tfrecord-File from .csv-File]()
@@ -91,7 +92,8 @@ detection_folder/
 
 ## 2.2 Preparing Files
 
-### 2.2.1 Create Label Map
+### 2.2.1 Create Label Map File
+
 1. create a file named ```label_map.pbtxt``` in this folder: ```direction_folder/workspace/training_demo/annotations```
 2. open the file and identify your items that you would like to detect. It should look like this:
     ```
