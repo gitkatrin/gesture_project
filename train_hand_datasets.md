@@ -103,10 +103,10 @@ detection_folder/
     ```
 3. open the [csv_to_tfrecord.py](https://github.com/gitkatrin/gesture_project/blob/master/scripts/csv_to_tfrecord.py) file
 4. change the path directories in the main function for:
-    - your image path
-    - your csv path
-    - your output path
-    - your label map path
+    - Line 72: your image path
+    - Line 73: your csv path
+    - Line 74: your output path
+    - Line 75: your label map path
 5. go back into the terminal and go to path ```cd workspace/training_demo``` 
 6. run the script with ```python3 csv_to_tfrecord.py```
 
