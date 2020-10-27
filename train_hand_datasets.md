@@ -14,6 +14,8 @@
   - [3.2 Monitoring realtime Training (optional)](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#32-monotoring-realtime-training-optional)
   - [3.3 Exporting the Interference Graph](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#33-exporting-the-inference-graph)
 - [4. Evaluation](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#4-evaluation)
+  - [4.1 Evaluate the Model](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#41-evaluate-the-model)
+  - [4.2]()
 - [5. Testing]()
   
 # 1. File Structure
@@ -184,7 +186,7 @@ in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace
 python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
 ```
 
-## 4.2 Monotoring realtime Training (optional)
+## 4.2 Monotoring realtime Evaluation (optional)
 
 It is possible to show the evaluation process with TensorBoard. This is optional.
 
