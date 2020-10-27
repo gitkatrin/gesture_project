@@ -135,7 +135,7 @@ detection_folder/
 3. do the following changes:
     - Line 3:   change ```num_classes``` to this value of different objects you want to detect
     - Line 135: change ```batch_size``` to 4
-    - Line 165: change ```fine_tune_checkpoint``` to your path (```pre-trained-models/ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/checkpoint/ckpt-0```)
+    - Line 165: change ```fine_tune_checkpoint``` to your path (```pre-trained-models/ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/checkpoint/ckpt-0```) for transfer learning
     - Line 171: change ```fine_tune_checkpoint_type``` to ```detection```
     - Line 175: change ```label_map_path``` to your path (```annotation/label_map.pbtxt```)
     - Line 177: change ```input_path``` to your path (```annotation/train.record```)
