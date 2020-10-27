@@ -6,7 +6,8 @@
 - [2. Preparing Settings](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#2-preparing-settings)
   - [2.1 Software](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#21-software)
   - [2.2 Preparing Files](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#22-preparing-files)
-    - [2.2.1 Generate .tfrecord-File from .csv-File](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#221-generate-tfrecord-file-from-csv-file)
+    - [2.2.1 Generate .tfrecord-File from .csv-File]()
+    - [2.2.2 Change Configuration File]()
 - [3. Training](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#3-training)
   - [3.1 Train the Model](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#31-train-the-model)
   - [3.2 Monitoring realtime Training (optional)](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#32-monotoring-realtime-training-optional)
@@ -85,14 +86,27 @@ detection_folder/
   - ```pip3 install protobuf```
 - [scripts for data preparation](https://github.com/gitkatrin/gesture_project/tree/master/scripts)
 - [Pre-trained Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+- Datasets: [Oxford Dataset](https://www.robots.ox.ac.uk/~vgg/data/hands/), [Egohands Dataset](http://vision.soic.indiana.edu/projects/egohands/)
 
 
 ## 2.2 Preparing Files
 
-1. create your [label map](https://github.com/gitkatrin/gesture_project/blob/master/scripts/label_map.pbtxt) here ```direction_folder/workspace/training_demo/annotations```
+### 2.2.1 Create Label Map
+1. create a file named ```label_map.pbtxt``` in this folder: ```direction_folder/workspace/training_demo/annotations```
+2. open the file and identify your items that you would like to detect. It should look like this:
+    ```
+    item {
+    id: 1
+    name: 'hand'
+    }
+    item {
+    id: 2
+    name: 'face'
+    }
+    ```
+    the file for hand detection is [here](https://github.com/gitkatrin/gesture_project/blob/master/scripts/label_map.pbtxt)
 
-
-### 2.2.1 Generate .tfrecord-File from .csv-File
+### 2.2.2 Generate .tfrecord-File from .csv-File
 
 1. go to the research folder in models with ```cd models/reseach``` without virtual environment
 2. compile the protos with:
@@ -110,7 +124,7 @@ detection_folder/
 5. go back into the terminal and go to path ```cd workspace/training_demo``` 
 6. run the script with ```python3 csv_to_tfrecord.py```
 
-### 2.2.2 Change Configuration File
+### 2.2.3 Change Configuration File
 
 1. copy the configuration file ```detection_folder/workspace/training_demo/pre-trained-model/ssd_mobilenet_v2_fpnlite_640x640_coco17_tpu-8/pipeline.config``` to ```detection_folder/workspace/training_demo/models/my_ssd_mobilenet_v2_fpnlite``` folder
 2. open the configuration file in ```detection_folder/workspace/training_demo/models/my_ssd_mobilenet_v2_fpnlite``` folder
