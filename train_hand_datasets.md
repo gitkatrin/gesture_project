@@ -88,7 +88,7 @@ detection_folder/
 - Python environement (```python3 -m venv --system-site-packages ./venv```)
   - ```pip3 install protobuf```
 - [scripts for data preparation](https://github.com/gitkatrin/gesture_project/tree/master/scripts)
-- [Pre-trained Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+- [Pre-trained Model](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) (in this case: SSD MobileNet V2 FPNLite 640x640)
 - Datasets: [Oxford Dataset](https://www.robots.ox.ac.uk/~vgg/data/hands/), [Egohands Dataset](http://vision.soic.indiana.edu/projects/egohands/)
 
 
