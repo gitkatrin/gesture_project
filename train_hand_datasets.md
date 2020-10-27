@@ -94,23 +94,21 @@ detection_folder/
 
 ### 2.2.1 Generate .tfrecord-File from .csv-File
 
-1. activate the Python environement with ```source ./venv/bin/activate``` (in terminal)
-   (Attention: you can also do it without the Python environement)
-2. go to the research folder in models with ```cd models/reseach```
-3. compile the protos with 
+1. go to the research folder in models with ```cd models/reseach``` without virtual environment
+2. compile the protos with 
   ```
   protoc object_detection/protos/*.proto --python_out=.
   export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
   sudo python3 setup.py install
   ```
-4. open the [csv_to_tfrecord.py](https://github.com/gitkatrin/gesture_project/blob/master/scripts/csv_to_tfrecord.py) file
-5. change the path directories in the main function for:
+3. open the [csv_to_tfrecord.py](https://github.com/gitkatrin/gesture_project/blob/master/scripts/csv_to_tfrecord.py) file
+4. change the path directories in the main function for:
   - your image path
   - your csv path
   - your output path
   - your label map path
-6. go back into the terminal and go to path ```cd workspace/training_demo``` 
-7. run the script with ```python3 csv_to_tfrecord.py```
+5. go back into the terminal and go to path ```cd workspace/training_demo``` 
+6. run the script with ```python3 csv_to_tfrecord.py```
 
 ### 2.2.2 Change Configuration File
 
