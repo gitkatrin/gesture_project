@@ -125,14 +125,7 @@ detection_folder/
     - Line 189: change ```input_path``` to your path (```annotation/test.record```)
 
     (keep in mind: if you choose a different model, than the line numbers will be different)
-
-### 2.2.2 Change Configuragtion File for Training
- - change batch_size to 4
- 
- 
-### 2.2.3 Change Configuragtion File for Evaluation
- - change batch_size to 1
-
+    
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
 # 3. Training
