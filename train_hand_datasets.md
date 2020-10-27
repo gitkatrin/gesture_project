@@ -15,8 +15,8 @@
   - [3.3 Exporting the Interference Graph](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#33-exporting-the-inference-graph)
 - [4. Evaluation](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#4-evaluation)
   - [4.1 Evaluate the Model](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#41-evaluate-the-model)
-  - [4.2]()
-- [5. Testing]()
+  - [4.2 Monotoring realtime Evaluation (optional)](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#42-monotoring-realtime-evaluation-optional)
+- [5. Testing](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#5-testing)
   
 # 1. File Structure
 
@@ -150,7 +150,7 @@ detection_folder/
 
 ## 3.1 Train the Model
 
-in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
+in the **virtual environment**, in file  ```cd detection_folder/workspace/training_demo``` use the following command:
 ```
 python3 model_main_tf2.py --model_dir=models/my_ssd_mobilenet_v2_fpnlite --pipeline_config_path=models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config
 ```
@@ -161,7 +161,7 @@ At the end the **loss should be between 0.150 and 0.200** to prevents unnderfitt
 
 It is possible to show the traning process with TensorBoard. This is optional.
 
-in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
+in the **virtual environment**, in file  ```cd detection_folder/workspace/training_demo``` use the following command:
 ```
 tensorboard --logdir=models/my_ssd_mobilenet_v2_fpnlite
 ```
@@ -170,7 +170,7 @@ It should open an URL-Link to the TensorBoard Server. Open this link in your web
 
 ## 3.3 Exporting the Inference Graph
 
-in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
+in the **virtual environment**, in file  ```cd detection_folder/workspace/training_demo``` use the following command:
 ```
 python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path ./models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config --trained_checkpoint_dir ./models/my_ssd_mobilenet_v2_fpnlite/ --output_directory ./exported-models/my_mobilenet_model
 ```
@@ -181,7 +181,7 @@ python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path .
 
 ## 4.1 Evaluate the Model
 
-in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
+in the **virtual environment**, in file  ```cd detection_folder/workspace/training_demo``` use the following command:
 ```
 python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
 ```
@@ -190,7 +190,7 @@ python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnl
 
 It is possible to show the evaluation process with TensorBoard. This is optional.
 
-in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
+in the **virtual environment**, in file  ```cd detection_folder/workspace/training_demo``` use the following command:
 ```
 tensorboard --logdir=models/my_ssd_mobilenet_v2_fpnlite
 ```
@@ -200,7 +200,7 @@ It should open an URL-Link to the TensorBoard Server. Open this link in your web
 
 # 5. Testing
 
-in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
+in the **virtual environment**, in file  ```cd detection_folder/workspace/training_demo``` use the following command:
 ```
 python3 TF-image-od.py
 ```
