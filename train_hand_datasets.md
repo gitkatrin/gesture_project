@@ -2,19 +2,19 @@
 
 - [1. File Structure](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#1-file-structure)
   - [1.1 Model Folder from Tensorflow](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#11-model-folder-from-tensorflow)
-  - [1.2 Workspace and Scripts Folder](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#12-workspace-and-scripts-folders)
+  - [1.2 Workspace and Scripts Folders](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#12-workspace-and-scripts-folders)
 - [2. Preparing Settings](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#2-preparing-settings)
-  - [Create Label Map File]()
   - [2.1 Software](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#21-software)
   - [2.2 Preparing Files](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#22-preparing-files)
-    - [2.2.1 Generate .tfrecord-File from .csv-File]()
-    - [2.2.2 Change Configuration File]()
+    - [2.2.1 Create Label Map File](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#221-create-label-map-file)
+    - [2.2.2 Generate .tfrecord-File from .csv-File](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#222-generate-tfrecord-file-from-csv-file)
+    - [2.2.3 Change Configuration File](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#223-change-configuration-file)
 - [3. Training](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#3-training)
   - [3.1 Train the Model](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#31-train-the-model)
   - [3.2 Monitoring realtime Training (optional)](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#32-monotoring-realtime-training-optional)
   - [3.3 Exporting the Interference Graph](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#33-exporting-the-inference-graph)
 - [4. Evaluation](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#4-evaluation)
-- [5. Testing](https://github.com/gitkatrin/gesture_project/blob/master/train_hand_datasets.md#5-testing)
+- [5. Testing]()
   
 # 1. File Structure
 
@@ -177,10 +177,22 @@ python3 ./exporter_main_v2.py --input_type image_tensor --pipeline_config_path .
 
 # 4. Evaluation
 
+## 4.1 Evaluate the Model
+
 in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
 ```
 python3 model_main_tf2.py --pipeline_config_path models/my_ssd_mobilenet_v2_fpnlite/my_ssd_mobilenet_v2.config --model_dir models/my_ssd_mobilenet_v2_fpnlite --checkpoint_dir models/my_ssd_mobilenet_v2_fpnlite --alsologtostderr
 ```
+
+## 4.2 Monotoring realtime Training (optional)
+
+It is possible to show the evaluation process with TensorBoard. This is optional.
+
+in the **virtual environment**, in file  ```cd hand_detection_egohands/workspace/training_demo``` use the following command:
+```
+tensorboard --logdir=models/my_ssd_mobilenet_v2_fpnlite
+```
+It should open an URL-Link to the TensorBoard Server. Open this link in your web browser and you can continuously monitor evaluation.
 
 [comment]: # (---------------------------------------------------------------------------------------------------------------------------------------------------------------)
 
@@ -194,7 +206,8 @@ There are also some other scripts for detection with different input:
 - for detecting and coundting objects on an **image**: ```python3 TF-image-object-counting.py```
 - for detecting objects in a **video**: ```python3 TF-video-od.py```
 - for detecting and counting objects in a **video**: ```python3 TF-video-object-counting.py```
-- for detection objects live on **webcam**: ```python3 TF-webcam-opencv.py```
+- for detecting objects live on **webcam**: ```python3 TF-webcam-opencv.py```
+- for detecting objects live on **special webcam**: ```python3 TF-webcam-OV580.py``` 
 
 You can also run this script with different arguments:
 ```
