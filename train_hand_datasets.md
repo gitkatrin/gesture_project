@@ -200,6 +200,8 @@ It should open an URL-Link to the TensorBoard Server. Open this link in your web
 
 # 5. Testing
 
+First you need to copy your ```label_map.pbtxt``` from ```cd detection_folder/workspace/training_demo/annotations``` to your  ```cd detection_folder/workspace/training_demo/exported-models/my_mobilenet_model/saved_model``` folder
+
 in the **virtual environment**, in file  ```cd detection_folder/workspace/training_demo``` use the following command:
 ```
 python3 TF-image-od.py
