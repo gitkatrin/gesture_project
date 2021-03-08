@@ -19,3 +19,4 @@ Credits:
 
 **Hand detection:**
   - datasets: [Egohands](http://vision.soic.indiana.edu/projects/egohands/), [Oxford](http://www.robots.ox.ac.uk/~vgg/data/hands/)
+  - first try of object detection (tablets): [Training a Custom Object Detector with TensorFlow 2.0 Custom Object Detection API 2020](https://www.youtube.com/watch?v=oqd54apcgG)
