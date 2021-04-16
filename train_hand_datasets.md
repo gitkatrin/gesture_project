@@ -60,8 +60,8 @@ detection_folder/
 |       |   |-- test
 |       |   |-- train
 |       |-- models            # model which you use for training
-|       |   `-- my_ssd_mobilenet_v2_fpnlite
-|       |       `-- my_ssd_mobilenet_v2.config   # copy .config from pre-trained model
+|       |   `-- my_ssd_mobilenet_v2_fpnlite      # here where 
+|       |       `-- my_ssd_mobilenet_v2.config   # copy .config from pre-trained model // This folder is empty at the beginning, later there will be the folders "eval" and "train" inside. In this folder will be the checkpoints as ".data-00000-of-00001" and ".index" format and the ".config" file. In eval and train folder will be the events in n ".v2" format.
 |       |-- pre-trained-models                   # pre-trained model which you use for training (download it here: https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
 |       |   `-- ssd_mobilenet_v1_fpn_640x640_coco17_tpu-8
 |       |       |-- checkpoint
