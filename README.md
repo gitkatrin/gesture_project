@@ -22,3 +22,10 @@ Credits:
   - first try of object detection (tablets): 
     - [YouTube: Training a Custom Object Detector with TensorFlow 2.0 Custom Object Detection API 2020](https://www.youtube.com/watch?v=oqd54apcgGE)
     - [GitHub: Training-a-Custom-TensorFlow-2.X-Object-Detector](https://github.com/armaanpriyadarshan/Training-a-Custom-TensorFlow-2.x-Object-Detector)
+
+
+---
+
+**Detection:**
+  - [Hand and gesture detection using only Image Processing](https://github.com/SouravJohar/handy)
+  - []()
