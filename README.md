@@ -33,3 +33,4 @@ Credits:
   - [Multi person pose detection](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
   - [Hand detection](https://github.com/victordibia/handtracking)
   - [3D Hand detection](https://github.com/lmb-freiburg/hand3d)
+  - [Gesture detection (his own dataset and model)](https://github.com/MrEliptik/HandPose)
