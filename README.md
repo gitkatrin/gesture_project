@@ -28,4 +28,6 @@ Credits:
 
 **Detection:**
   - [Hand and gesture detection using only Image Processing](https://github.com/SouravJohar/handy)
-  - []()
+  - [Hand detection with 20 Points](https://github.com/StrongRay/Openpose-Hand-Detection)
+  - [Hand and gesture detection](https://github.com/StrongRay/Openpose-Hand-Detection)!!!
+  - [Multi person pose detection](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
