@@ -31,3 +31,5 @@ Credits:
   - [Hand detection with 20 Points](https://github.com/StrongRay/Openpose-Hand-Detection)
   - [Hand and gesture detection](https://github.com/StrongRay/Openpose-Hand-Detection)!!!
   - [Multi person pose detection](https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation)
+  - [Hand detection](https://github.com/victordibia/handtracking)
+  - [3D Hand detection](https://github.com/lmb-freiburg/hand3d)
