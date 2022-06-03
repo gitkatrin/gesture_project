@@ -206,12 +206,12 @@ in the **virtual environment**, in file  ```cd detection_folder/workspace/traini
 ```
 python3 TF-image-od.py
 ```
-There are also some other scripts for detection with different input:
-- for detecting and coundting objects on an **image**: ```python3 TF-image-object-counting.py```
+There are also some other scripts for detection with different inputs:
+- for detecting and counting objects on an **image**: ```python3 TF-image-object-counting.py```
 - for detecting objects in a **video**: ```python3 TF-video-od.py```
 - for detecting and counting objects in a **video**: ```python3 TF-video-object-counting.py```
 - for detecting objects live on **webcam**: ```python3 TF-webcam-opencv.py```
-- for detecting objects live on **special webcam**: ```python3 TF-webcam-OV580.py``` 
+- for detecting objects live on a **special webcam**: ```python3 TF-webcam-OV580.py``` 
 
 You can also run this script with different arguments:
 ```
